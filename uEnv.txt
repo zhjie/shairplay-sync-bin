@@ -1,0 +1,10 @@
+bootfile=zImage
+bootpartition=mmcblk1p1
+fdtfile=am335x-boneblack.dtb
+loadall=run loaduEnvtxt; run loadximage; run loadxfdt; run optargs;
+mmcargs=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} root=/dev/${bootpartition} rw rootfstype=ext4 rootwait ${cmdline}
+
+###################
+
+optargs=capemgr.disable_partno=BB-BONELT-HDMI,BB-BONELT-HDMIN
+# optargs=snd_soc_botic.serconfig=MM-- snd_soc_davinci_mcasp.mute_pins=8 snd_soc_davinci_mcasp.amanero_mute_delay=500 snd_soc_davinci_mcasp.amanero_mute_pins=8  snd_soc_botic.ext_masterclk=7 snd_soc_botic.clk_44k1=45158400 snd_soc_botic.clk_48k=49152000
